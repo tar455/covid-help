@@ -1,3 +1,10 @@
+
+
+
+:root{
+  --main:#9b500a;
+  --bg-color:#21bb9a;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,3 +18,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.need
+{
+  font-family:  Menlo, Monaco, Cons;
+}
+
+
+.carousel-inner{
+  /* width: 100%; */
+  background-color: var(--bg-color);
+  width:100%;
+  margin: auto;
+  padding-top: 1rem ;
+  padding-bottom: 3rem;
+}
+.carousel-item {
+  display: block;
+  margin-left: auto;
+    margin-right: auto;
+    width: 20em;
+}
+

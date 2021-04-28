@@ -1,0 +1,23 @@
+{
+  "name": "covidhelp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start":"node backend/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tar455/covid-help.git"
+  },
+  "author": "Tarique Ansari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tar455/covid-help/issues"
+  },
+  "homepage": "https://github.com/tar455/covid-help#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

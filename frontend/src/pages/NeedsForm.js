@@ -10,7 +10,7 @@ export default function NeedsFrom() {
                     <div className="col-sm-4">
                         <h1 className="page-header">Covid-help</h1>
                         <p>Please Help for humanity</p>
-                        <a href="/home"> Let's save one </a>
+                        <a href="/"> Let's save one </a>
                         <label for="patientInfo">patient</label>
                         <br />
                         <form action="/save-data" method="POST">
