@@ -38,4 +38,12 @@ code {
     margin-right: auto;
     width: 20em;
 }
+.container
+{
+  margin-top: 2rem;
+}
+.Info
+{
+  width:50%;
+}
 

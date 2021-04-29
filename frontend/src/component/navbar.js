@@ -14,11 +14,11 @@ class Navbar extends React.Component {
               <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                   <li className="nav-item">
-                    <a className="nav-link active" aria-current="page" href="/home">Home</a>
+                    <a className="nav-link active" aria-current="page" href="/">Home</a>
                   </li>
-                  <li className="nav-item">
+                  {/* <li className="nav-item">
                     <a className="nav-link" href="/help">Do Help</a>
-                  </li>
+                  </li> */}
                   <li className="nav-item">
                     <a className="nav-link" href="/needs">Need Help</a>
                   </li>

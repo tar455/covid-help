@@ -1,40 +1,41 @@
-export  const data = {
+export const data = {
     patient: [
         {
-            "need":"Oxygen",
+            "id":"001",
+            "need": "Oxygen",
             "name": 'Xyz',
-            "phoneNumber":"7002314821",
+            "phoneNumber": "7002314821",
             "Address": "Asansol",
-            "PIN code":"713302",
-            "BloodGroup":"O+",
-            "Message":"Please Help me!!!!!!!!!!!!!!!!"
+            "PIN code": "713302",
+            "BloodGroup": "O+",
+            "Message": "Please Help me!!!!!!!!!!!!!!!!"
         },
         {
-            "need":"Plasma",
+            "need": "Plasma",
             "name": 'zyb',
-            "phoneNumber":"8412314821",
+            "phoneNumber": "8412314821",
             "Address": "Asansol",
-            "PIN code":"713302",
-            "BloodGroup":"O+",
-            "Message":"Please Help me!!!!!!!!!!!!!!!!"
+            "PIN code": "713302",
+            "BloodGroup": "O+",
+            "Message": "Please Help me!!!!!!!!!!!!!!!!"
         },
         {
-            "need":"Oxygen",
+            "need": "Oxygen",
             "name": 'YtR',
-            "phoneNumber":"9002314821",
+            "phoneNumber": "9002314821",
             "Address": "Asansol",
-            "PIN code":"713302",
-            "BloodGroup":"O+",
-            "Message":"Please Help me!!!!!!!!!!!!!!!!"
+            "PIN code": "713302",
+            "BloodGroup": "O+",
+            "Message": "Please Help me!!!!!!!!!!!!!!!!"
         },
         {
-            "need":"Bed",
+            "need": "Bed",
             "name": 'Md Tarique Ansari',
-            "phoneNumber":"7892314821",
+            "phoneNumber": "7892314821",
             "Address": "Asansol",
-            "PIN code":"713302",
-            "BloodGroup":"O+",
-            "Message":"Please Help me!!!!!!!!!!!!!!!!"
+            "PIN code": "713302",
+            "BloodGroup": "O+",
+            "Message": "Please Help me!!!!!!!!!!!!!!!!"
         }
     ]
 }

@@ -1,6 +1,8 @@
 import React from 'react';
 import Navbar from "../component/Navbar";
 import { data } from "./patientdata.js";
+// import {NeedsAction} from "../reduxAction/NeedsAction";
+
 export default function Home() {
   return (
     <>
@@ -35,6 +37,7 @@ export default function Home() {
       <div className="container">
         <div className="row">
           <div className="col-sm-12">
+          <center> <a href="/needs"><button className="btn"><strong>Post Your Needs</strong></button></a></center>
             <div className="card">
               <div className="card-body">
                 <h5 className="card-title">{data.patient[0].Address}</h5>
@@ -48,6 +51,12 @@ export default function Home() {
                 <a href="/comment" className="btn  btn-light">comments</a>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-12">
             <div className="card-body">
               <h5 className="card-title">Asansol</h5>
               <h6 className="need">Need {data.patient[1].need}</h6>
@@ -64,4 +73,5 @@ export default function Home() {
       </div>
     </>
   );
+
 }

@@ -1,7 +1,60 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from "../component/Navbar";
+function NeedsFrom() {
+    const [need, setNeed] = useState();
+    const [Name,setName] = useState();
+    const [Phone,setPhone] = useState();
+    const [Address,setAddress] = useState();
+    const [PinCode,setPinCode] = useState();
+    const [BloodGroup,setBloodGroup] = useState();
+    const [Message,setMessage]= useState();
+    const NeedUpdate = (event) => { 
+        setNeed(event.target.value)
+    }
+    const NameUpdate = (event) => { // Dealing with name field changes to update our state
+        setName(event.target.value)
+    }
+    const PhoneUpdate = (event) => { 
+        setPhone(event.target.value)
+    }
+    const AddressUpdate = (event) => { 
+        setAddress(event.target.value)
+    }
+    const PinCodeUpdate = (event) => { 
+        setPinCode(event.target.value)
+    }
+    const BloodGroupUpdate = (event) => { 
+        setBloodGroup(event.target.value)
+    }
+    const MessageUpdate = (event) => { 
+        setMessage(event.target.value)
+    }
 
-export default function NeedsFrom() {
+    const handleSubmit = () => { // Once the form has been submitted, this function will post to the backend
+        const postURL = "http://localhost:5000/api/staff/"; //Our previously set up route in the backend
+        fetch(postURL, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ // We should keep the fields consistent for managing this data later
+                need:need.value,
+                Name: Name.value,
+                Phone: Phone.value,
+                Address: Address.value,
+                PinCode: PinCode.value,
+                BloodGroup: BloodGroup.value,
+                Message: Message.value,
+                dates: []
+            })
+        })
+            .then(() => {
+                // Once posted, the user will be notified 
+                alert('You have been added to the system!');
+            })
+    }
+
     return (
         <div>
             <Navbar />
@@ -11,26 +64,26 @@ export default function NeedsFrom() {
                         <h1 className="page-header">Covid-help</h1>
                         <p>Please Help for humanity</p>
                         <a href="/"> Let's save one </a>
-                        <label for="patientInfo">patient</label>
+                        <label htmlFor="patientInfo">patient</label>
                         <br />
-                        <form action="/save-data" method="POST">
-                            <input list="Needs" name="Need" id="Need" placeholder="Your Need" className="from-control" />
+                        <form onSubmit={handleSubmit}>
+                            <input list="Needs" onChange={NeedUpdate} name="Need" id="Need" placeholder="Your Need"  className="from-control" />
                             <datalist id="Needs">
                                 <option value="Oxygen" />
                                 <option value="Bed" />
                                 <option value="Plasma" />
                             </datalist>
-                            <br/>
-                            <label for="Name">Enter Name:</label>
-                            <input type="text" id="Name" className="form-control" placeholder="Enter Name" />
-                            <label for="phoneNumber">Phone Number:</label>
-                            <input type="number" className="form-control" id="phoneNumber" placeholder="Enter phone Number" />
-                            <label for="address">Address:</label>
-                            <input type="text" className="form-control" id="address" placeholder="Enter address" />
-                            <label for="pinCode">Pin Code:</label>
-                            <input type="text" className="form-control" id="pinCode" placeholder="Enter pin code" />
-                            <label for="bloodGroup">Blood Group:(If Need Plasma)</label>
-                            <input list="BloodGroup" id="bloodGroup" placeholder="Enter blood group" className="form-control" />
+                            <br />
+                            <label htmlFor="Name">Enter Name:</label>
+                            <input type="text" id="Name" name="name" onChange={NameUpdate} className="form-control" placeholder="Enter Name" />
+                            <label htmlFor="phoneNumber">Phone Number:</label>
+                            <input type="number" name="Phone" onChange={PhoneUpdate} className="form-control" id="phoneNumber" placeholder="Enter phone Number" />
+                            <label htmlFor="address">Address:</label>
+                            <input type="text" name="address" className="form-control" onChange={AddressUpdate} id="address" placeholder="Enter address" />
+                            <label htmlFor="pinCode">Pin Code:</label>
+                            <input type="text" name="pinCode" className="form-control" onChange={PinCodeUpdate} id="pinCode" placeholder="Enter pin code" />
+                            <label htmlFor="bloodGroup">Blood Group:(If Need Plasma)</label>
+                            <input list="BloodGroup" name="BloodGroup" id="bloodGroup" onChange={BloodGroupUpdate} placeholder="Enter blood group" className="form-control" />
                             <datalist id="BloodGroup">
                                 <option value="A+" />
                                 <option value="A-" />
@@ -41,7 +94,7 @@ export default function NeedsFrom() {
                                 <option value="O+" />
                                 <option value="O-" />
                             </datalist>
-                            <textarea name="info" id="" cols="30" rows="10" placeholder="Any additional info You  want to share"></textarea>
+                            <textarea name="info" id="" onChange={MessageUpdate} cols="30" rows="10" placeholder="Any additional info You  want to share"></textarea>
                             <input type="submit" className="btn btn-primary" />
                         </form>
                     </div>
@@ -50,3 +103,4 @@ export default function NeedsFrom() {
         </div>
     )
 }
+export default NeedsFrom;
