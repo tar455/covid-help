@@ -1,0 +1,15 @@
+
+#1{
+    #0.1-signUp ready
+    {
+        backend =
+        mongoDbs
+        API
+        #F
+        {
+            email duplicates check 
+            weak password check
+            Redirect to Home page
+        }
+    }
+}

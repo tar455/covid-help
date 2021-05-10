@@ -5,7 +5,7 @@ const url = "mongodb://localhost:27017/Covid-help";
 
 mongoose.connect(url,{useUnifiedTopology:true,useNewUrlParser:true} ,err => {
     if (!err) {
-        console.log("connected");
+        console.log("MongoDB connected");
     }
     else
     {
@@ -14,3 +14,4 @@ mongoose.connect(url,{useUnifiedTopology:true,useNewUrlParser:true} ,err => {
 })
 
 require('../model/paitentModel');
+require('../model/signUp.model');

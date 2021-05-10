@@ -1,4 +1,5 @@
 import React from 'react';
+import Login from '../component/Login';
 import Navbar from "../component/Navbar";
 import { data } from "./patientdata.js";
 // import {NeedsAction} from "../reduxAction/NeedsAction";
@@ -10,6 +11,7 @@ export default function Home() {
       <div className="container">
         <div className="row">
           <div className="col-sm-12">
+            <Login />
             <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
               <div className="carousel-inner">
                 <div className="carousel-item active">
@@ -37,7 +39,7 @@ export default function Home() {
       <div className="container">
         <div className="row">
           <div className="col-sm-12">
-          <center> <a href="/needs"><button className="btn"><strong>Post Your Needs</strong></button></a></center>
+            <center> <a href="/needs"><button className="btn"><strong>Post Your Needs</strong></button></a></center>
             <div className="card">
               <div className="card-body">
                 <h5 className="card-title">{data.patient[0].Address}</h5>

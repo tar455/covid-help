@@ -47,3 +47,6 @@ code {
   width:50%;
 }
 
+.btn-art{
+  background-color: var(--bg-color);
+}
