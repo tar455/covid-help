@@ -1,28 +1,15 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 // https://bezkoder.com/react-node-mongodb-auth/
 
-async function loginUser(credentials) {
-    return fetch('/login/', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(credentials)
-  })
-    .then(data => data.json())
-}
-export default function LoginPage({ setToken }) {
+
+export default function LoginPage() {
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
   const handleSubmit = async e => {
     e.preventDefault();
-    const token = await loginUser({
-      username,
-      password
-    });
-    setToken(token);
   }
   return (
     <div>
@@ -40,7 +27,7 @@ export default function LoginPage({ setToken }) {
           <button type="submit">Submit</button>
         </div>
         <div>
-          If not have an Account<a href="/signup">Signup</a>
+          If not have an Account<Link to="/signup">Signup</Link>
         </div>
       </form>
     </div>

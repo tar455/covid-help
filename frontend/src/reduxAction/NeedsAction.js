@@ -1,16 +1,16 @@
-import { Login_Request, Needs_From_Failure, Needs_From_Request, Needs_From_Success } from "../reduxConstant/NeedsConstant"
-import axios from 'axios';
+import { Needs_From_Failure, Needs_From_Request, Needs_From_Success } from "../reduxConstant/NeedsConstant"
+import Axios from 'axios';
 
 export const NeedsAction = () => async (dispatch) => {
     dispatch({
-        type: Needs_From_Request
+        type: Needs_From_Request,
     });
     try {
-        const Needs = await axios.get(`http://localhost:5000/data_needs/api`);
+        const {Needs} = await Axios.get('/data_needs/api');
         dispatch({
             type: Needs_From_Success,
-            payload: Needs
-        })
+            payload: Needs,
+        });
     } catch (error) {
         dispatch({
             type: Needs_From_Failure,
@@ -19,8 +19,3 @@ export const NeedsAction = () => async (dispatch) => {
     }
 }
 
-export const Login_Action = () => async (dispatch) => {
-    dispatch({
-        type: Login_Request
-    });
-}

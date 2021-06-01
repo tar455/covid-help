@@ -15,4 +15,4 @@ const DoHelp = () => {
 export default DoHelp;
 
 // Plan
-// Use a different monodb collection to store it
+// Use a different mongodb collection to store it

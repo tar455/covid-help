@@ -1,14 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Login extends React.Component {
     render() {
         return (
             <>
-                <a href="/login">
+                <Link to="/login">
                     <button className="btn btn-outline-success" >
                         Login
                     </button>
-                </a>
+                </Link>
             </>
         );
     }
