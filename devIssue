@@ -1,5 +1,6 @@
 
-#1{
+#1
+{
     #0.1-signUp ready
     {
         backend =
@@ -10,13 +11,22 @@
             email duplicates check 
             weak password check
             Redirect to Home page
-        }
-    }
+        }//solve
+    }//solve
     #0.2-Login
     {
         backend
         mongoDbs
         API
-        
+    }//solve
+    #0.3
+    {** in progress
+        all data available on data base show on homepage
+    }
+    #0.4
+    {** feature will add be add 
+        Validation in each input field
     }
 }
+
+
