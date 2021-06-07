@@ -50,3 +50,14 @@ code {
 .btn-art{
   background-color: var(--bg-color);
 }
+.error{
+  color: red;
+  background-color: rgb(240, 168, 182);
+}
+.success{
+  color: green;
+  background-color: rgb(204, 252, 204);
+}
+.must{
+  color: rgb(37, 5, 126);
+}
