@@ -18,7 +18,7 @@ export default function PatientShow(props) {
                 <h2>Request</h2>
                 <p className="card-text">
                   My name is {data.patient[0].name}.
-                  {data.patient[0].Message}.
+                  {data.patient[3].Message}.
                 </p>
                 <Link to="/thanks" className="btn btn-success">Thanks</Link>
                 <Link to="/comment" className="btn  btn-light">comments</Link>

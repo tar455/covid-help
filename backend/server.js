@@ -9,6 +9,7 @@ app.use(cors());
 
 app.use('/api',UseRouter);
 app.use('/data_needs/api',(req, res) => {
+    
     res.send(data);
 });
 app.listen(port,()=>{

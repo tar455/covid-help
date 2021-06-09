@@ -1,5 +1,28 @@
 import React, { useState } from 'react'
 import Navbar from "../component/Navbar";
+import Form from 'react-validation/build/form';
+import Input from 'react-validation/build/input';
+import Button from 'react-validation/build/button';
+
+const required=(value)=>
+{
+    if(!value.toString().trim().length)
+    {
+        return <span className="must">required</span>;
+    }
+}
+const phone=(value)=>{
+    if(value.toString().trim().length<10 & value.toString().trim().length!==10)
+    {
+        return <span className="error">Enter Valid phone number</span>
+    }
+}
+const pin=(value)=>{
+    if(value.toString().trim().length<6)
+    {
+        return <span className="error">Not valid PIN code</span>;
+    }
+}
 function NeedsFrom() {
     const [need, setNeed] = useState();
     const [Name, setName] = useState();
@@ -65,7 +88,7 @@ function NeedsFrom() {
                         <a href="/"> Let's save one </a>
                         <label htmlFor="patientInfo">patient</label>
                         <br />
-                        <form onSubmit={handleSubmit}>
+                        <Form onSubmit={handleSubmit}>
                             <input list="Needs" onChange={NeedUpdate} name="Need" id="Need" placeholder="Your Need" className="from-control" />
                             <datalist id="Needs">
                                 <option value="Oxygen" />
@@ -74,13 +97,30 @@ function NeedsFrom() {
                             </datalist>
                             <br />
                             <label htmlFor="Name">Enter Name:</label>
-                            <input type="text" id="Name" name="name" onChange={NameUpdate} className="form-control" placeholder="Enter Name" />
+                            <Input type="text" id="Name"
+                             name="name"
+                             validations={[required]}
+                              onChange={NameUpdate} 
+                              className="form-control"
+                               placeholder="Enter Name" />
                             <label htmlFor="phoneNumber">Phone Number:</label>
-                            <input type="number" name="Phone" onChange={PhoneUpdate} className="form-control" id="phoneNumber" placeholder="Enter phone Number" />
+                            <Input type="number"
+                             name="Phone" 
+                             onChange={PhoneUpdate}
+                              className="form-control"
+                               id="phoneNumber" 
+                               validations={[required,phone]}
+                               placeholder="Enter phone Number" />
                             <label htmlFor="address">Address:</label>
                             <input type="text" name="address" className="form-control" onChange={AddressUpdate} id="address" placeholder="Enter address" />
                             <label htmlFor="pinCode">Pin Code:</label>
-                            <input type="text" name="pinCode" className="form-control" onChange={PinCodeUpdate} id="pinCode" placeholder="Enter pin code" />
+                            <Input type="text" 
+                            name="pinCode" 
+                            className="form-control"
+                             onChange={PinCodeUpdate}
+                              id="pinCode"
+                              validations={[required,pin]}
+                              placeholder="Enter pin code" />
                             <label htmlFor="bloodGroup">Blood Group:(If Need Plasma)</label>
                             <input list="BloodGroup" name="BloodGroup" id="bloodGroup" onChange={BloodGroupUpdate} placeholder="Enter blood group" className="form-control" />
                             <datalist id="BloodGroup">
@@ -94,8 +134,8 @@ function NeedsFrom() {
                                 <option value="O-" />
                             </datalist>
                             <textarea name="info" id="" onChange={MessageUpdate} cols="30" rows="10" placeholder="Any additional info You  want to share"></textarea>
-                            <input type="submit" className="btn btn-primary" />
-                        </form>
+                            <Button type="submit" className="btn btn-primary" >Get Help</Button>
+                        </Form>
                     </div>
                 </div>
             </div>

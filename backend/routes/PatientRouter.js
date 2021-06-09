@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const express = require('express');
 const bodyParser = require('body-parser');
 const router = express.Router();
+// var MongoClient = require('mongodb').MongoClient
 
 require('../model/paitentModel');
 require('../model/signUp.model');
@@ -33,5 +34,9 @@ router.post('/login', (req, res) => {
         User.confirmPassword = req.body.confirmPassword;
         User.save();
         console.log("save successfully");
+})
+router.get('/data_needs2',async(req, res)=>
+{
+      res.send(JSON.stringify(await PatientData.find()));
 })
 module.exports = router;

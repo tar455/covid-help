@@ -26,6 +26,18 @@
     #0.4
     {** feature will add be add 
         Validation in each input field
+        #0.4.1
+        {
+            validation in needs form
+        }
+    }
+    #0.5
+    {
+        all data retrieve from data base.
+    }
+    #0.6
+    {
+        notification
     }
 }
 

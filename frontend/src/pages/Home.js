@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NeedsAction } from "../reduxAction/NeedsAction";
 // import { Link } from 'react-router-dom';
 import PatientShow from './patientShow';
-import { data } from "./patientdata";
+// import { data } from "./patientdata";
 import Banner from '../component/Banner';
 export default function Home(props) {
   const dispatch = useDispatch();

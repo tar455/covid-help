@@ -51,7 +51,7 @@ export default function Signup() {
             password: password,
             confirmPassword: confirmPassword
         }).then((response) => {
-            console.log(response);
+            return <span className="error">Error</span>;
         });
     }
     return (
