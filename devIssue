@@ -1,4 +1,6 @@
-
+**completed
+$$next
+@@current
 #1
 {
     #0.1-signUp ready
@@ -31,13 +33,25 @@
             validation in needs form
         }
     }
-    #0.5
+    #0.5**
     {
         all data retrieve from data base.
     }
-    #0.6
+    #0.6@@
+    {
+        Makes Login Working
+    }
+    #0.7$$
     {
         notification
+    }
+    #0.8Thanks $$
+    {
+        make working
+    }
+    #0.9comment $$
+    {
+        make working
     }
 }
 

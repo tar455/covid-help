@@ -58,7 +58,7 @@ export default function Signup() {
         <div>
             <div className="container">
                 <div className="row">
-                    <div className="col-sm-4 mx-auto">
+                    <div className="col-sm-5 mx-auto">
                         <Form>
                             <label htmlFor="emailId">Email:</label>
                             <Input type="text" id="emailId"

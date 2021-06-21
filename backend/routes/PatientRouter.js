@@ -21,8 +21,16 @@ router.post('/staff', (req, res) => {
         Data.PinCode = req.body.PinCode;
         Data.BloodGroup = req.body.BloodGroup;
         Data.Message = req.body.Message;
-        Data.save();
+        if(Data.save())
+        {
         console.log("save successfully")
+        }
+        else
+        {
+                res.send({
+                        massage:"Some thing wrong !!Error"
+                });
+        }
 })
 const User_Data = mongoose.model('signUp_DB');
 router.post('/login', (req, res) => {

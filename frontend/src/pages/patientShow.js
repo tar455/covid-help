@@ -9,7 +9,7 @@ export default function PatientShow(props) {
     <>
       <div className="container">
         <div className="row">
-          <div className="col-sm-12">
+          <div className="col-sm-6 mx-auto">
             <center> <Link to="/needs"><button className="btn"><strong>Post Your Needs</strong></button></Link></center>
             <div className="card">
               <div className="card-body">

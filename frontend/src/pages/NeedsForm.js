@@ -82,7 +82,7 @@ function NeedsFrom() {
             <Navbar />
             <div className="container">
                 <div className="row">
-                    <div className="col-sm-4">
+                    <div className="col-sm-6 mx-auto">
                         <h1 className="page-header">Covid-help</h1>
                         <p>Please Help for humanity</p>
                         <a href="/"> Let's save one </a>
@@ -133,7 +133,7 @@ function NeedsFrom() {
                                 <option value="O+" />
                                 <option value="O-" />
                             </datalist>
-                            <textarea name="info" id="" onChange={MessageUpdate} cols="30" rows="10" placeholder="Any additional info You  want to share"></textarea>
+                            <textarea className="form-control" name="info" id="" onChange={MessageUpdate} cols="50" rows="10" placeholder="Any additional info You  want to share"></textarea>
                             <Button type="submit" className="btn btn-primary" >Get Help</Button>
                         </Form>
                     </div>

@@ -6,7 +6,7 @@ export const NeedsAction = () => async (dispatch) => {
         type: Needs_From_Request,
     });
     try {
-        const {data} = await Axios.get('/api/data_needs2');
+        const { data } = await Axios.get('/api/data_needs2');
         dispatch({
             type: Needs_From_Success,
             payload: data,
