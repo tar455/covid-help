@@ -7,6 +7,8 @@ import Input from 'react-validation/build/input';
 import Button from 'react-validation/build/button';
 import { useDispatch, useSelector } from 'react-redux';
 import { LoginAction } from '../reduxAction/LoginAction';
+import Loading from "./Loading";
+import Error from "./Error";
 // https://bezkoder.com/react-node-mongodb-auth/
 
 const required = (value) => {
@@ -32,9 +34,6 @@ export default function LoginPage(props) {
   const redirect=props.location.search?props.location.search.split('=')[1]:'/';
   const User = useSelector((state) => state.UserLogin);
   const { loading, error, userInfo } = User;
-  
-  
-   
   const handleSubmit = async e => {
     e.preventDefault();
     dispatch(LoginAction(username,password2));
@@ -47,7 +46,10 @@ export default function LoginPage(props) {
   },[props.history,redirect,userInfo]);
   return (
     <div>
-      <div className="container">
+      {
+        loading?(<Loading></Loading>):error?(<Error>
+          {error.massage}
+        </Error>) :(<div className="container">
         <div className="row">
           <div className="col-sm-5 mx-auto">
             <h1 className=""> Log In</h1>
@@ -66,7 +68,10 @@ export default function LoginPage(props) {
             </Form>
           </div>
         </div>
-      </div>
+      </div>)
+
+      }
+     
     </div>
   )
 }

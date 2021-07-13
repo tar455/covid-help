@@ -61,3 +61,20 @@ code {
 .must{
   color: rgb(243, 17, 17);
 }
+/* Login And Notification  */
+.LogAndNot
+{
+  position: absolute;
+  right: 0;
+  width: 100px;
+  height: 120px;
+}
+
+/* Profile setting  */
+.profile-pic
+{
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}

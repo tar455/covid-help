@@ -20,7 +20,8 @@ export default function PatientShow(props) {
                   My name is {data.patient[0].name}.
                   {data.patient[3].Message}.
                 </p>
-                <Link to="/thanks" className="btn btn-success">Thanks</Link>
+                <button className="btn btn-success">Thanks</button>
+                <button className="btn btn-normal Track">InTouch</button>
                 <Link to="/comment" className="btn  btn-light">comments</Link>
               </div>
             </div>

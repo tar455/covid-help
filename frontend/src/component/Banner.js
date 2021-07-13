@@ -7,7 +7,7 @@ export default function Banner() {
             <div className="container">
                 <div className="row">
                     <div className="col-sm-12">
-                        <Login />
+                        <div className="LogAndNot"><i className="far fa-bell"></i> <Login /></div>
                         <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
                             <div className="carousel-inner">
                                 <div className="carousel-item active">
