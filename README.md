@@ -1,5 +1,14 @@
 # covid-help
 
+How To run It in your computer?
+
+    1.Clone The repo.
+        Step By step Process to clone a repositry
+        1.Install  git in your system   ()                      {if already Insatall just go to step ->2}
+        2.open your command line
+        3.Go to directory where you want to clone repo          {using cd "path"}
+        4.Type in command line "git clone 'URL Copy from git hub'{Then Hit enter !Wait it will clone in some min}
+        5.
 Why I am Created This?
 
 

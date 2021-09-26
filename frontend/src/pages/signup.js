@@ -5,6 +5,13 @@ import Input from 'react-validation/build/input';
 import Form from 'react-validation/build/form';
 import Button from 'react-validation/build/button';
 import validator from 'validator';
+// function onSignIn(googleUser) {
+//     var profile = googleUser.getBasicProfile();
+//     console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+//     console.log('Name: ' + profile.getName());
+//     console.log('Image URL: ' + profile.getImageUrl());
+//     console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+//   }
 const required=(value)=>{
     if(!value.toString().trim().length)
     {
@@ -76,6 +83,7 @@ export default function Signup() {
                             <div>
                                 <Button type="submit" name="Register" className="btn btn-art" onClick={register} >Register</Button>
                             </div>
+                            <div className="g-signin2" data-onsuccess="onSignIn"></div>
                         </Form>
                     </div>
                 </div>

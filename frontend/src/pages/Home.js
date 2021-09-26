@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 // import Login from '../component/Login';
-import Navbar from "../component/Navbar";
+import Navbar from "../component/navbar";
 import Loading from "./Loading";
 import { useDispatch, useSelector } from 'react-redux';
 import { NeedsAction } from "../reduxAction/NeedsAction";
@@ -28,6 +28,7 @@ export default function Home(props) {
                   <PatientShow key={patient._id} patient={patient}></PatientShow>
                 ))
               }
+              
             </div>
           )}
     </>
