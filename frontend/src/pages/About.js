@@ -1,10 +1,10 @@
 import React from 'react'
-// import Navbar from '../component/Navbar'
+import Navbar from '../component/navbar'
 
 export default function About() {
     return (
         <div>
-            {/* <Navbar/> */}
+            <Navbar/>
             <div className="container">
                 <div className="row">
                     <div className="col-sm-12">

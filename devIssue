@@ -33,13 +33,23 @@ $$next
             validation in needs form
         }
     }
+    
     #0.5**
     {
         all data retrieve from data base.
     }
+    #0.5.1
+    {
+        Google signUp API Adding 
+    }
     #0.6@@
     {
+        Show password
         Makes Login Working
+    }
+    #
+    {
+        Profile Editing and view
     }
     #0.7$$
     {

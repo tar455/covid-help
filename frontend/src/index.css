@@ -78,3 +78,8 @@ code {
   height: 150px;
   border-radius: 50%;
 }
+
+#sh_pas
+{
+  position: initial;
+}

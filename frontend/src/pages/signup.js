@@ -5,6 +5,7 @@ import Input from 'react-validation/build/input';
 import Form from 'react-validation/build/form';
 import Button from 'react-validation/build/button';
 import validator from 'validator';
+import { Redirect } from 'react-router';
 // function onSignIn(googleUser) {
 //     var profile = googleUser.getBasicProfile();
 //     console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
@@ -12,32 +13,24 @@ import validator from 'validator';
 //     console.log('Image URL: ' + profile.getImageUrl());
 //     console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
 //   }
-const required=(value)=>{
-    if(!value.toString().trim().length)
-    {
+const required = (value) => {
+    if (!value.toString().trim().length) {
         return <span className="must">required</span>;
     }
 }
-const emailCheck = (value)=>
-{
-    if(!validator.isEmail(value))
-    {
+const emailCheck = (value) => {
+    if (!validator.isEmail(value)) {
         return <span className="error">{value} is not a valid email.</span>;
     }
 }
-const passwordCheck=(value, props, components) => {
-       if (value !== components['password'][0].value) { // components['password'][0].value !== components['confirm'][0].value
-            return <span className="error">Passwords are not equal.</span>
+const passwordCheck = (value, props, components) => {
+    if (value !== components['password'][0].value) { // components['password'][0].value !== components['confirm'][0].value
+        return <span className="error">Passwords are not equal.</span>
     }
-    else if(value.toString().trim().length<8)
-    {
+    else if (value.toString().trim().length < 8) {
         return <span className="error">Must be at least 8 characters.</span>
     }
-    // else
-    // {
-    //     return <span className="success">Password match</span>
-    // }
-  };
+};
 export default function Signup() {
 
     const [email, setEmail] = useState();
@@ -45,6 +38,19 @@ export default function Signup() {
     const [confirmPassword, setConfirmPassword] = useState();
     const emailUpdate = (event) => {
         setEmail(event.target.value);
+    }
+    const showVal = () => {
+        var pas = document.getElementById("passwordId");
+        var pas2 = document.getElementById("confirm_passwordId");
+        if (pas.type == "password" && pas2.type == "password") {
+            pas.type = "text";
+            pas2.type = "text";
+        }
+        else {
+            pas.type = "password";
+            pas2.type = "password";
+        }
+        // alert("function work");
     }
     const passwordUpdate = (event) => {
         setPassword(event.target.value);
@@ -58,8 +64,9 @@ export default function Signup() {
             password: password,
             confirmPassword: confirmPassword
         }).then((response) => {
-            return <span className="error">Error</span>;
+            return <span className="error">{response.massage}</span>;
         });
+        Redirect('/login');
     }
     return (
         <div>
@@ -69,18 +76,21 @@ export default function Signup() {
                         <Form>
                             <label htmlFor="emailId">Email:</label>
                             <Input type="text" id="emailId"
-                             name="email" className="form-control"
-                              validations={[required,emailCheck]}
-                              autoComplete="off" onChange={emailUpdate}  ></Input>
+                                name="email" className="form-control"
+                                validations={[required, emailCheck]}
+                                autoComplete="off" onChange={emailUpdate}  ></Input>
                             <label htmlFor="passwordId">Password:</label>
                             <Input type="password" id="passwordId" onChange={passwordUpdate} className="form-control" name="password" autoComplete="on" />
                             <label htmlFor="confirm_passwordId">confirm password:</label>
-                            <Input type="password" id="confirm_passwordId" onChange={confirmPasswordUpdate} 
-                            className="form-control"
-                             name="confirmPassword"
-                             validations={[required,passwordCheck]}
-                              autoComplete="on" />  
+                            <Input type="password" id="confirm_passwordId" onChange={confirmPasswordUpdate}
+                                className="form-control"
+                                name="confirmPassword"
+                                validations={[required, passwordCheck]}
+                                autoComplete="on" />
                             <div>
+                                <Input type="checkbox" onChange={
+                                    e => showVal()
+                                } /> show password
                                 <Button type="submit" name="Register" className="btn btn-art" onClick={register} >Register</Button>
                             </div>
                             <div className="g-signin2" data-onsuccess="onSignIn"></div>

@@ -31,47 +31,63 @@ export default function LoginPage(props) {
   const [username, setUsername] = useState('');
   const [password2, setPassword] = useState('');
   const dispatch = useDispatch();
-  const redirect=props.location.search?props.location.search.split('=')[1]:'/';
+  const redirect = props.location.search ? props.location.search.split('=')[1] : '/';
   const User = useSelector((state) => state.UserLogin);
   const { loading, error, userInfo } = User;
   const handleSubmit = async e => {
     e.preventDefault();
-    dispatch(LoginAction(username,password2));
+    dispatch(LoginAction(username, password2));
+
+  }
+  const showVal = () => {
+    var pas = document.getElementById("password");
+
+    if (pas.type == "password") {
+      pas.type = "text";
+    }
+    else {
+      pas.type = "password";
+    }
+    // alert("function work");
   }
   useEffect(() => {
-    if(userInfo)
-    {
+    if (userInfo) {
       props.history.push(redirect);
     }
-  },[props.history,redirect,userInfo]);
+  }, [props.history, redirect, userInfo]);
   return (
     <div>
       {
-        loading?(<Loading></Loading>):error?(<Error>
+        loading ? (<Loading></Loading>) : error ? (<Error>
           {error.massage}
-        </Error>) :(<div className="container">
-        <div className="row">
-          <div className="col-sm-5 mx-auto">
-            <h1 className=""> Log In</h1>
-            <Form onSubmit={handleSubmit}>
-              <label htmlFor="email">Email
-              </label>
-              <Input type="text" id="email" className="form-control" name="email" onChange={e => setUsername(e.target.value)} validations={[required, email]} autoComplete="on" />
-              <label htmlFor="password">Password</label>
-              <Input type="password" className="form-control" id="password" name="password" onChange={e => setPassword(e.target.value)} validations={[required, password1]} autoComplete="on" />
-              <div>
+        </Error>) : (<div className="container">
+          <div className="row">
+            <div className="col-sm-5 mx-auto">
+              <h1 className=""> Log In</h1>
+              <Form onSubmit={handleSubmit}>
+                <label htmlFor="email">Email
+                </label>
+                <Input type="text" id="email" className="form-control" name="email" onChange={e => setUsername(e.target.value)} validations={[required, email]} autoComplete="on" />
+                <label htmlFor="password">Password</label>
+                <Input type="password" className="form-control" id="password" name="password" onChange={e => setPassword(e.target.value)} validations={[required, password1]} autoComplete="on" />
+                <div>
+                  <Input type="checkbox" onChange={e => showVal()
+
+                  }
+                  /> <span id="sh_pas">show password</span>
+                </div>
                 <Button type="submit" className="btn btn-art" >Login</Button>
-              </div>
-              <div>
-                If not have an Account<Link to="/signup">Signup</Link>
-              </div>
-            </Form>
+                <div>
+                  <br />
+                  If not have an Account<Link to="/signup">Signup</Link>
+                </div>
+              </Form>
+            </div>
           </div>
-        </div>
-      </div>)
+        </div>)
 
       }
-     
+
     </div>
   )
 }

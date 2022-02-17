@@ -25,7 +25,7 @@ router.post('/security_login', async (req, res) => {
                 __v:user.__v,
                 token: generateToken(user)
             });
-            // console.log("You are here;");
+            console.log("You are here;");
             return;
         }
     }
@@ -34,6 +34,7 @@ router.post('/security_login', async (req, res) => {
         res.send({
             massage:"Your Are Not register"
         })
+        console.log("You are not register");
     }
     res.status(404).send({
         massage: 'Invalid email or Password'

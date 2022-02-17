@@ -21,14 +21,12 @@ router.post('/staff', (req, res) => {
         Data.PinCode = req.body.PinCode;
         Data.BloodGroup = req.body.BloodGroup;
         Data.Message = req.body.Message;
-        if(Data.save())
-        {
-        console.log("save successfully")
+        if (Data.save()) {
+                console.log("save successfully")
         }
-        else
-        {
+        else {
                 res.send({
-                        massage:"Some thing wrong !!Error"
+                        massage: "Some thing wrong !!Error"
                 });
         }
 })
@@ -40,11 +38,19 @@ router.post('/login', (req, res) => {
         User.email = req.body.email;
         User.password = req.body.password;
         User.confirmPassword = req.body.confirmPassword;
-        User.save();
-        console.log("save successfully");
+        if (User.save()) {
+                console.log("save successfully");
+        }
+        else {
+                res.send(
+                        {
+                                "massage": "Register Successfullly"
+                        }
+                )
+        }
+
 })
-router.get('/data_needs2',async(req, res)=>
-{
-      res.send(JSON.stringify(await PatientData.find()));
+router.get('/data_needs2', async (req, res) => {
+        res.send(JSON.stringify(await PatientData.find()));
 })
 module.exports = router;

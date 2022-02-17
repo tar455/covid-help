@@ -7,27 +7,28 @@ import {
     from "../reduxConstant/NeedsConstant"
 
 
-export const LoginAction = (email,password) => async (dispatch) => {
+export const LoginAction = (email, password) => async (dispatch) => {
     dispatch(
         {
             type: Login_Request,
-            payload:{email,password}
+            payload: { email, password }
         }
     );
     try {
-        const { Login_data } = await Axios.post('/auth/security_login',{email,password});
+        const { Login_data } = await Axios.post('/auth/security_login', { email, password });
         dispatch(
             {
                 type: Login_Success,
                 payload: Login_data,
             }
         )
-        localStorage.setItem('userInfo',JSON.stringify(Login_data));
+        localStorage.setItem('userInfo', JSON.stringify(Login_data));
     } catch (error) {
         dispatch(
             {
                 type: Login_Failure,
-                payload:error.response
+                payload: massage
+                // {error:"Error"}
                 //  error.response && error.response.Login_data.massage 
                 // ?error.response.Login_data.massage
                 // :error.massage
